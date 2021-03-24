@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String[] allPermissions = new String[] { Manifest.permission.RECORD_AUDIO, Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE };
 
-    private String connectionString = "endpoint=https://prasad-testacs.communication.azure.com/;accesskey=ymzvlgn4KiMq1cylbzEXbpFkQarvvH0Ps9ULSLdMidx4V4klv7++SZfa9y4pgx86MdkwKkdX5GI8glGz4fW6BA==";
+    private String connectionString = "<connectionString>";
     private SmsClient smsClient;
     EditText phoneText;
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         createSmsClient();
 
         phoneText = findViewById(R.id.phoneid);
-        phoneText.setText("+12672257727");
+        phoneText.setText("<number>");
 
         Button sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener(l -> sendSMS());
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         SendSmsOptions options = new SendSmsOptions();
         options.setEnableDeliveryReport(true);
 
-        SendSmsResponse response = smsClient.sendMessage(new PhoneNumber("+18332153352"),
+        SendSmsResponse response = smsClient.sendMessage(new PhoneNumber("<toll free number>"),
                                    to,
                                     msgText,
                                     options);
